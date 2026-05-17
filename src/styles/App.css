@@ -1,1 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.form{
+  background-color: rgb(196, 223, 246);
+  width: 250px;
+  padding: 40px 20px 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin-inline: auto;
+  margin-block-start: 50px;
+  box-shadow: 2px 2px 8px  rgba(0,0,0,0.2);
+}
+h3{
+  color: rgb(14, 126, 174);
+}
+label{
+  color: rgb(14, 126, 174)
+}
+input{
+  border-radius: 3px;
+  border:none;
+  padding: 5px;
+}
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.first-btn{
+  align-self: flex-end;
 
+}
+button{
+  margin: 10px 0;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border:none;
+  background-color: rgb(27, 187, 158);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  color:rgb(2, 91, 91);
+  font-weight: bold;
+  font-size: 14px;
+}
+.validation{
+  color:red;
+  font-size: 14px;
+}

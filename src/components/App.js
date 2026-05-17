@@ -1,11 +1,46 @@
 
-import React from "react";
+import React, {useState} from "react";
 import './../styles/App.css';
+import Step from "./Step";
 
 const App = () => {
+  const [stepCount, setStepCount] = useState(1)
+  const [cardError, setCardError] = useState('')
+  const [dateError, setDateError] = useState('')
+  const [formData, setFormData] = useState({first_name:'',last_name:'',model:'',car_price:'',card_info:'', expiry_date:''})
+
+  function handleSubmit(e){
+    e.preventDefault()
+    console.log(formData,'data')
+    setFormData({first_name:'',last_name:'',model:'',car_price:'',card_info:'', expiry_date:''})
+  }
+  function handleStepCount(num){
+    setStepCount(prev => prev+num)
+  }
+  function handleChange(e){
+    let objkey = e.target.id
+    let value= e.target.value
+    setFormData(prev => ({...prev, [objkey]:value}))
+
+    if(objkey === 'card_info'){
+       if(e.target.value.length !== 12){
+          setCardError('Credit card number must be exactly 12 digits long.')
+        }else{
+          setCardError('')
+        }
+    }
+    if(objkey === 'expiry_date'){
+      if(!e.target.value.match(/^\d{2}\/\d{2}$/)){
+          setDateError('Expiration data must be in the format MM/YY.')
+        }else{
+          setDateError('')
+        }
+    }
+  }
+
   return (
     <div>
-        {/* Do not remove the main div */}
+        <Step stepCount={stepCount} dateError={dateError} handleChange={handleChange} cardError={cardError} handleSubmit={handleSubmit} formData={formData} handleStepCount={handleStepCount} />
     </div>
   )
 }
