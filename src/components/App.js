@@ -39,9 +39,9 @@ const App = () => {
   }
 
   return (
-    <div>
+    <>
         <Step stepCount={stepCount} dateError={dateError} handleChange={handleChange} cardError={cardError} handleSubmit={handleSubmit} formData={formData} handleStepCount={handleStepCount} />
-    </div>
+    </>
   )
 }
 
