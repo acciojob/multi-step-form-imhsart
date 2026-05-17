@@ -7,7 +7,7 @@ const Step = ({stepCount, cardError, dateError, handleStepCount, formData, handl
 
   if(stepCount === 1){
     return (
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form' id='step1' onSubmit={handleSubmit}>
         <h3>Customer Details</h3>
         <label htmlFor='first_name'>First Name:</label>
         <input type='text' id='first_name' value={formData.first_name} onChange={handleChange}></input>
@@ -22,7 +22,7 @@ const Step = ({stepCount, cardError, dateError, handleStepCount, formData, handl
 
   if(stepCount === 2){
     return (
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form' id='step2' onSubmit={handleSubmit}>
         <h3>Car Details</h3>
         <label htmlFor='model'>Brand:</label>
         <input type='text' id='model' value={formData.model} onChange={handleChange}></input>
@@ -36,7 +36,7 @@ const Step = ({stepCount, cardError, dateError, handleStepCount, formData, handl
     )
   }
   return (
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form' id='step3' onSubmit={handleSubmit}>
         <h3>Payment Details</h3>
         <label htmlFor='card_info'>Credit Card Number:</label>
         <input type='text' id='card_info' value={formData.card_info}  onChange={handleChange}></input>
